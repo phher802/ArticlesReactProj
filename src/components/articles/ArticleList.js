@@ -19,5 +19,26 @@ function ArticleList(){
     }, []);
     
   
+    return(
+        <div>
+            <h2>
+                Articles
+                <Link to= '/articles/new' className='btn btn-primary float-right'>Create Article</Link>
+            </h2>
+            <hr />
+            {articles.map(article => {
+                return(
+                    <div key={article._id}>
+                        <h4>
+                            <Link to={'/articles/${article._id}'}>{article.title}</Link>
+                        </h4>
+                        <small>_id: {article._id}</small>
+                        <hr />
+                    </div>
+                )
+            })}
+        </div>
     )
 }
+
+export default ArticleList;
