@@ -17,7 +17,7 @@ function ArticleInf(props){
         getArticle();
     }, [props]);
 
-    aysnc; function handleDelete(){
+    async function handleDelete(){
         try{
             await axios.delete('/api/articles/${props.match.params._id}');
             props.history.push('/articles');
