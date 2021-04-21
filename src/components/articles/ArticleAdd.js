@@ -20,9 +20,10 @@ function ArticleAdd(props){
                 console.log('error', error);
             }
         }
-    }postArticle();
+        postArticle();
+    }
 
-    function handleChange(){
+    function handleCancel(){
         props.history.push('/articles');
     }
 
