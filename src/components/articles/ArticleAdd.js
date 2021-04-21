@@ -25,5 +25,39 @@ function ArticleAdd(props){
     function handleChange(){
         props.history.push('/articles');
     }
+
+    return (
+        <div>
+            <h1>Create Article</h1>
+            <hr />
+            <form onSumbit = {handleSubmit}>
+                <div className='form-group'>
+                    <label>Language</label>
+                    <input name='language' type='text' value={article.language}
+                        onChange={handleChange} className='form-control' />
+                </div>
+                <div className='form-group'>
+                    <label>Category</label>
+                    <input name='category' type='text' value={article.category}
+                        onChange={handleChange} className='form-control' />
+                </div>
+                <div className='form-group'>
+                    <label>Title</label>
+                    <input name='title' type='text' value={article.title}
+                        onChange={handleChange} className='form-control' />
+                </div>
+                <div className='form-group'>
+                    <label>Content</label>
+                    <textarea name='content' rows='5' value={article.content}
+                        onChange={handleChange} className='form-control' />
+                </div>
+                <div className='btn-group'>
+                    <input type='submit' value='Submit' className='btn btn-primary' />
+                    <button type='button' onClick={handleCancel} className='btn btn-secondary'>Cancle</button>
+                </div>
+            </form>
+        </div>
+    );
 }
 
+export default ArticleAdd;
