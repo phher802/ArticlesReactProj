@@ -27,7 +27,7 @@ function Navigation(){
                 </ul>
             </div>
         </nav>
-    )
+    );
 }
 
 function Main(){
@@ -43,19 +43,18 @@ function Main(){
 }
 
 function App(){
-    return (<div>
+    return (
     <div>
-    <Header />
+        <Header />
         <Footer />
-    </div>
-    <div className="App">
-        <Router>
-            <Navigation />
-            <div className="container">
-                <Main />
-            </div>
-        </Router>
-    </div>
+        <div className="App">
+            <Router>
+                <Navigation />
+                <div className="container">
+                    <Main />
+                </div>
+            </Router>
+        </div>
     </div>
     );
 }

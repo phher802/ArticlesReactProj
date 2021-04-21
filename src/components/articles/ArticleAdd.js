@@ -11,7 +11,7 @@ function ArticleAdd(props){
 
     function handleSubmit(event){
         event.preventDefault();
-        if(!article.title || !article.content) return 
+        if(!article.language || !article.category || !article.title || !article.content) return 
         async function postArticle(){
             try{
                 const response = await post('/api/articles', article);
@@ -24,7 +24,7 @@ function ArticleAdd(props){
     }
 
     function handleCancel(){
-        props.history.push('/articles');
+        props.history.push('/components/articles');
     }
 
     return (
@@ -54,7 +54,7 @@ function ArticleAdd(props){
                 </div>
                 <div className='btn-group'>
                     <input type='submit' value='Submit' className='btn btn-primary' />
-                    <button type='button' onClick={handleCancel} className='btn btn-secondary'>Cancle</button>
+                    <button type='button' onClick={handleCancel} className='btn btn-secondary'>Cancel</button>
                 </div>
             </form>
         </div>
