@@ -1,3 +1,4 @@
+//jshint esversion:6
 import React, {useState, useEffect} from 'react';
 import {get, patch} from 'axios';
 
@@ -29,7 +30,12 @@ function ArticleEdit(){
         }
         updateArticle();
     }
-    function handleChange(){
+    function handleChange(event){
         setArticle({...article, [event.target.name]: event.target.value})
     }
+
+    function handleCancel(){
+        props.history.push('/articles/${article._id}');
+    }
+
 }
