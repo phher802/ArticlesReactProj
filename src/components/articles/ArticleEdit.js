@@ -2,8 +2,8 @@
 import React, {useState, useEffect} from 'react';
 import {get, patch} from 'axios';
 
-function ArticleEdit(){
-    const intialState = {language: '', category: '', title: '', content: ''}
+function ArticleEdit(props){
+    const initialState = {language: '', category: '', title: '', content: ''}
     const [article, setArticle] = useState(initialState);
 
     useEffect(function(){
