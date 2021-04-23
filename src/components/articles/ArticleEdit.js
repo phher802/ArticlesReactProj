@@ -38,4 +38,34 @@ function ArticleEdit(){
         props.history.push('/articles/${article._id}');
     }
 
+    return(
+        <di>
+            <h1>Edit {article.title}</h1>
+            <hr />
+            <form onSubmit={handleSubmit}>
+            <div className="form-group">
+                <lable>Language</lable>
+                <input type="text" name="language" value={article.language} onChange={handleChange} className="form-control" />
+            </div>
+            <div className="form-group">
+                <lable>Category</lable>
+                <input type="text" name="category" value={article.category} onChange={handleChange} className="form-control" />
+            </div>
+            <div className="form-group">
+                <lable>Title</lable>
+                <input type="text" name="title" value={article.title} onChange={handleChange} className="form-control" />
+            </div>
+            <div className="form-group">
+                <lable>Content</lable>
+                <textarea name="content" rows="5" value={article.content} onChange={handleChange} className="form-control" />
+            </div>
+            <div className="btn-group">
+                <button type="submit" className="btn btn-primary">Update</button>
+                <button type="button" onClick={handleCancel} className="btn btn-secondary">Cancel</button>
+            </div>
+            </form>
+        </di>
+    );
 }
+
+export default ArticleEdit;
